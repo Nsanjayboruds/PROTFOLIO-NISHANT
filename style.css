@@ -913,3 +913,18 @@ summary::marker {
     height: 100vh;
     background-color: #111;
 }
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: 2px solid #0f0;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 999;
+    transition: transform 0.15s ease-out;
+    background-color: rgba(0, 255, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
