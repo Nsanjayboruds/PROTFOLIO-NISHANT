@@ -113,10 +113,32 @@ function page6Animations() {
     });
 }
 
-// Call functions in order
+
 locomotiveAnimation();
 navAnimation();
 page2Animation();
 page3VideoAnimation();
 page6Animations();
 loadingAnimation();
+const cursor = document.querySelector(".cursor");
+
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+
+window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+function animate() {
+    cursorX += (mouseX - cursorX) * 0.15;
+    cursorY += (mouseY - cursorY) * 0.15;
+    cursor.style.left = cursorX + "px";
+    cursor.style.top = cursorY + "px";
+    requestAnimationFrame(animate);
+}
+
+animate();
+
